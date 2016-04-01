@@ -1,0 +1,46 @@
+.liste {
+	margin: 10px;
+	transition: box-shadow 0.15s;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: rgb(170, 170, 170);
+	padding: 10px;
+	box-shadow: rgb(85, 85, 85) 0px 2px 3.33333px;
+	display: block;
+}
+
+.btn-group {
+	text-align: right;
+}
+
+#supprimer {
+	background-color: #c9302c;
+	color: white;
+	font-weight: bold;
+}
+
+#modifier {
+	background-color: #f0ad4e;
+	color: white;
+	font-weight: bold;
+}
+
+h2 {
+	margin-bottom: 20px;
+}
+
+#stopModifier, #ajouter {
+	background-color: #ffb6c1;
+	color: white;
+	font-weight: bold;
+}
+
+#contacter {
+	background-color: #e9967A;
+	color: white;
+	font-weight: bold;
+	float: right;
+}
+#modif{
+	margin-top: 5%;
+}

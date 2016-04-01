@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="../css/theme.css" rel="stylesheet" media="screen">
+<link href="../css/listeTheme.css" rel="stylesheet" media="screen">
+
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">EntreVoisins</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="index.html">Home</a></li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</nav>
+	<div ng-app="dvdsModule">
+		<section ng-controller="dvdsController as dvdsController">
+			<h2>Liste des DVDs :</h2>
+			<div ng-repeat="dvd in dvdsController.dvds"
+				class="liste ng-scope">
+				<div>Titre : {{dvd.titre}}</div>
+				<br />
+				<div>Réalisateur : {{dvd.realisateur}}</div>
+				<br />
+				<div>Résumé : {{dvd.resume}}</div>
+				<br />
+				<div class="btn-group" role="group" aria-label="...">
+					<button type="button" class="btn btn-default" id="supprimer"
+						ng-click="VM.delete($index)">Supprimer</button>
+					<a href="#modif"><button type="button" class="btn btn-default"
+							id="modifier" ng-click="VM.update(dvd)">Modifier</button></a>
+				</div>
+				<a ng-href="mailto:{{dvd.email}}"><button type="button"
+						class="btn btn-default" id="contacter">Contacter</button></a>
+
+			</div>
+			<div id="modif">
+				<div class="col-sm-6 col-md-2" style="margin-left: 35px;">
+					<label for="titre">Titre :</label><br /> <input
+						class="form-control" type="text" ng-model="VM.newDvd.titre" />
+				</div>
+				<div class="col-sm-6 col-md-2">
+					<label for="email">email :</label><br /> <input
+						class="form-control" type="text" ng-model="VM.newDvd.email" />
+				</div>
+
+				<div class="col-sm-6 col-md-2">
+					<label for="realisateur">Réalisateur :</label><br /> <input
+						class="form-control" type="text" ng-model="VM.newDvd.realisateur" />
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<label for="resume">Résumé :</label><br />
+					<textarea class="form-control" rows='10' cols='50'
+						ng-model="VM.newDvd.resume"></textarea>
+				</div>
+				<div class="col-sm-6 col-md-1">
+					<button id="ajouter" class="btn btn-default" ng-click="VM.add()"
+						ng-hide="VM.isEditing">Ajouter</button>
+					<button id="stopModifier" class="btn btn-default"
+						ng-click="VM.stopModify()" ng-show="VM.isEditing">Modifier</button>
+				</div>
+			</div>
+		</section>
+	</div>
+	<script type="text/javascript" src="../js/dvdsController.js"></script>
+</body>
+</html>

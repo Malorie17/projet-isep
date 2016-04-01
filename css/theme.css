@@ -1,0 +1,44 @@
+body {
+	padding-top: 70px;
+	padding-bottom: 30px;
+}
+
+.theme-dropdown .dropdown-menu {
+	position: static;
+	display: block;
+	margin-bottom: 20px;
+}
+
+.theme-showcase>p>.btn {
+	margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+	width: auto;
+}
+
+nav {
+	background-color: red;
+}
+
+.thumbnail {
+	margin: 10px;
+	transition: box-shadow 0.15s;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: rgb(170, 170, 170);
+	padding: 10px;
+	box-shadow: rgb(85, 85, 85) 0px 2px 3.33333px;
+	display: block;
+	height: 120px;
+}
+.thumbnail:hover{  
+    color: #cc04c2;
+	background-color: #000000;
+}
+img{
+	float:left;
+}
+h2{
+	text-align: center;
+}
